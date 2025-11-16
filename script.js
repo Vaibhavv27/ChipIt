@@ -272,3 +272,4 @@ document.addEventListener("DOMContentLoaded", () => {
     addActivity(activityText);
   });
 });
+
