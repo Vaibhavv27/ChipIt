@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PointPlay – Virtual Points Only</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top-bar">
+      <div class="logo">PointPlay</div>
+
+      <div class="header-right">
+        <div class="welcome-text">
+          Player: <span id="username-display">Guest</span>
+        </div>
+        <div class="balance-box">
+          Balance: <span id="balance">0</span> 🪙
+        </div>
+        <button id="bonus-btn" class="bonus-btn">
+          Claim Daily +100 🪙
+        </button>
+        <button id="reset-btn" class="reset-btn">
+          Reset Balance
+        </button>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="hero">
+        <h1>Welcome to PointPlay</h1>
+        <p>Purely for fun. All points are virtual. No real money involved.</p>
+      </section>
+
+      <!-- Profile section -->
+      <section class="profile-card">
+        <h2>Your Profile</h2>
+        <p class="profile-sub">
+          Set a nickname to personalize your experience on this device.
+        </p>
+
+        <form id="username-form" class="profile-form">
+          <input
+            type="text"
+            id="username-input"
+            placeholder="Enter a username"
+            maxlength="16"
+            required
+          />
+          <button type="submit" class="save-username-btn">
+            Save Name
+          </button>
+        </form>
+
+        <p class="profile-hint">
+          This is stored only in your browser using <code>localStorage</code>.
+        </p>
+      </section>
+
+      <!-- Recent Activity section -->
+      <section class="activity-card">
+        <h2>Recent Activity</h2>
+        <p class="activity-sub">
+          Last few things you've done in PointPlay (only for this session).
+        </p>
+        <ul id="activity-list" class="activity-list">
+          <!-- Filled by JavaScript -->
+        </ul>
+      </section>
+
+      <section class="games">
+        <!-- Coin Flip Game -->
+        <div class="game-card">
+          <h2>Coin Flip</h2>
+          <p>Bet points on Heads or Tails.</p>
+
+          <div class="bet-controls">
+            <label>
+              Bet:
+              <input id="bet-amount" type="number" min="1" value="10" />
+            </label>
+          </div>
+
+          <div class="choice-buttons">
+            <button data-choice="heads" class="choice-btn">Heads</button>
+            <button data-choice="tails" class="choice-btn">Tails</button>
+          </div>
+
+          <button id="play-btn" class="play-btn">Play</button>
+
+          <div id="result" class="result"></div>
+        </div>
+
+        <!-- Dice Roll Game -->
+        <div class="game-card">
+          <h2>Dice Roll</h2>
+          <p>Pick a number (1–6) and roll the dice.</p>
+
+          <div class="bet-controls">
+            <label>
+              Bet:
+              <input id="dice-bet-amount" type="number" min="1" value="10" />
+            </label>
+          </div>
+
+          <div class="dice-choice-row">
+            <label for="dice-choice">Your number:</label>
+            <select id="dice-choice">
+              <option value="1">1 🎲</option>
+              <option value="2">2 🎲</option>
+              <option value="3">3 🎲</option>
+              <option value="4">4 🎲</option>
+              <option value="5">5 🎲</option>
+              <option value="6">6 🎲</option>
+            </select>
+          </div>
+
+          <button id="dice-play-btn" class="play-btn">Roll Dice</button>
+
+          <div id="dice-result" class="result"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
